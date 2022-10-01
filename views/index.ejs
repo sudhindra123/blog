@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog| <%= title %></title>
+</head> -->
+
+<%- include("./partial/header.ejs") %>
+<body>
+    
+<!-- 
+<nav>
+
+
+<div class="site-title">
+<a href="/"><h1>Blog Site</h1></a>
+<p>TradeMark Group</p>
+</div>
+<ul>
+    <li><a href="/">Blogs</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/blogs/create">New  Blogs</a></li>
+</ul>
+</nav> -->
+
+<%- include("./partial/nav.ejs") %>
+
+<div class="blogs content">
+    <h2>All Blogs</h2>
+<% if (blogs.length > 0) { %>
+    <% blogs.forEach(blog => { %>
+
+<a class="single" href="/blogs/<%= blog._id %>">
+    <h3 class="title">  <%= blog.title %> </h3>
+    <p class="snippet">  <%= blog.snippet %> </p>
+</a>
+     <% }) %>
+        <% } else { %>
+            <p>No Blogs To Display</p>
+            <% } %>
+
+
+
+
+
+</div>
+<%- include("./partial/footer.ejs") %>
+</body>
+</html>
+
+
+<!-- // ejs is meant for server side rendering -->
+
+
+
+
